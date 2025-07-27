@@ -1,0 +1,11 @@
+# requirements.txt
+Flask
+pymongo
+opencv-python
+numpy
+werkzeug
+flask-cors
+watchdog
+gunicorn
+redis
+boto3

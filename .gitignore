@@ -1,0 +1,31 @@
+# --- Secrets ---
+# Never commit environment files with secrets or API keys.
+.env
+
+# --- Virtual Environment ---
+# The virtual environment is specific to your machine and can be recreated from requirements.txt.
+.venv/
+
+lib
+
+# --- Application Data ---
+# Ignore user-uploaded files and generated output to keep the repository small.
+uploads/
+output/
+temp_metrics/
+
+# --- Python ---
+# Ignore compiled Python files and caches.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# --- IDE/Editor ---
+# Ignore configuration files from common editors.
+.vscode/
+.idea/
+
+# --- OS Specific ---
+# Ignore macOS-specific files.
+.DS_Store

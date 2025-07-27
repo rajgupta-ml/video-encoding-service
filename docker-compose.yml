@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    container_name: video-encoder-app
+    ports:
+      - "5000:5000" # Map host port 5000 to container port 5000
+    volumes:
+      - ./uploads:/app/uploads
+      - ./output:/app/output
+    environment:
+      - MONGODB_URI=${MONGO_DB_URI} 
+      - S3_BUCKET_NAME=${S3_BUCKET_NAME}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+    command: ["gunicorn", "--workers", "4", "--bind", "0.0.0.0:5000", "app:app"]
+    depends_on:
+      - redis # Ensures Redis starts before your app
+
+  # The Redis Service
+  redis:
+    image: "redis:alpine"
+    container_name: redis
+    ports:
+      - "6380:6379"
