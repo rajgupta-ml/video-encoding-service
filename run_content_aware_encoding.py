@@ -3,7 +3,7 @@ import sys
 import os
 import json
 import time
-from motion_analyzer_copy import run_content_aware_encoding, save_to_mongodb, DateTimeEncoder
+from motion_analyzer import run_content_aware_encoding, save_to_mongodb, DateTimeEncoder
 
 def main():
     if len(sys.argv) < 2:

@@ -8,7 +8,7 @@ from datetime import datetime
 from bson import json_util, ObjectId
 from werkzeug.utils import secure_filename
 from pymongo import MongoClient
-from motion_analyzer_copy import run_content_aware_encoding, save_to_mongodb, DateTimeEncoder
+from motion_analyzer import run_content_aware_encoding, save_to_mongodb, DateTimeEncoder
 from flask_cors import CORS
 import redis
 import boto3
